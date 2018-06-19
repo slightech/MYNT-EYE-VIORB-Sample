@@ -2779,7 +2779,7 @@ void Optimizer::LocalBundleAdjustmentNavState(KeyFrame *pCurKF, const std::list<
 
 }
 
-Vector3d Optimizer::OptimizeInitialGyroBias(const std::vector<Frame> &vFrames)
+Vector3d Optimizer::OptimizeInitialGyroBias(const std::vector<Frame,  Eigen::aligned_allocator<Frame> > &vFrames)
 {
     //size_t N = vpKFs.size();
     Matrix4d Tbc = ConfigParam::GetEigTbc();

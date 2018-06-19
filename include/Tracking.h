@@ -43,6 +43,8 @@
 
 #include <mutex>
 
+#include <Eigen/StdVector> //vector of objects that contain fixed-size vectorizable eigen types need special care
+
 namespace ORB_SLAM2
 {
 
@@ -63,7 +65,7 @@ public:
     bool mbRelocBiasPrepare;
     void RecomputeIMUBiasAndCurrentNavstate(NavState& nscur);
     // 20 Frames are used to compute bias
-    vector<Frame> mv20FramesReloc;
+    vector<Frame,  Eigen::aligned_allocator<Frame>> mv20FramesReloc;
 
     // Predict the NavState of Current Frame by IMU
     void PredictNavStateByIMU(bool bMapUpdated);

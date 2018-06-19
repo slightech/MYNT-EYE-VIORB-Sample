@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.4.6)
+set(OpenCV_DIR "/usr/local/share/OpenCV")
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 
 rosbuild_init()
@@ -30,7 +31,7 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../../../cmake_modules)
 
-find_package(OpenCV 2.4.3 REQUIRED)
+find_package(OpenCV 3.0 REQUIRED)
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 

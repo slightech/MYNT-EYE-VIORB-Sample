@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+set(OpenCV_DIR "/usr/local/share/OpenCV")
 project(ORB_SLAM2)
 
 IF(NOT CMAKE_BUILD_TYPE)
@@ -28,7 +29,7 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 2.4.3 REQUIRED)
+find_package(OpenCV 3.0 REQUIRED)
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(Cholmod REQUIRED)
