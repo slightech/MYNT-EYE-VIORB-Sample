@@ -35,7 +35,7 @@ After running the above type, pinhole's distortion_parameters and projection_par
 
 ## Run VIORB and mynt_eye_ros_wrapper
 ```
-roslaunch roslaunch mynt_eye_ros_wrapper mynteye.launch
+roslaunch mynt_eye_ros_wrapper mynteye.launch
 roslaunch ORB_VIO testmynteye.launch
 ```
 Finally, files in pyplotscripts can be used to visualize some results.
