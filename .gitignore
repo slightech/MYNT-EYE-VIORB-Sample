@@ -9,6 +9,8 @@ Vocabulary/*.txt
 *.autosave
 **/tmp/*
 **/debug.txt
+*~
+*.swp
 
 Examples/ROS/ORB_SLAM2/Mono
 Examples/ROS/ORB_SLAM2/RGBD
