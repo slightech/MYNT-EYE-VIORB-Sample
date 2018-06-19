@@ -2,6 +2,8 @@
 #define IMUDATA_H
 
 #include <Eigen/Dense>
+#include <Eigen/StdVector>
+#include <vector>
 
 namespace ORB_SLAM2
 {
@@ -12,6 +14,8 @@ class IMUData
 {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+
+    typedef std::vector<IMUData, Eigen::aligned_allocator<IMUData> > vector_t;
 
     // covariance of measurement
     static Matrix3d _gyrMeasCov;
@@ -40,6 +44,8 @@ public:
     Vector3d _g;    //gyr data
     Vector3d _a;    //acc data
     double _t;      //timestamp
+
+
 };
 
 }

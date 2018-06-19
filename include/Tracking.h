@@ -75,11 +75,11 @@ public:
     bool TrackLocalMapWithIMU(bool bMapUpdated=false);
 
     ConfigParam* mpParams;
-    cv::Mat GrabImageMonoVI(const cv::Mat &im, const std::vector<IMUData> &vimu, const double &timestamp);
+    cv::Mat GrabImageMonoVI(const cv::Mat &im, const IMUData::vector_t &vimu, const double &timestamp);
     // IMU Data since last KF. Append when new data is provided
     // Should be cleared in 1. initialization beginning, 2. new keyframe created.
-    std::vector<IMUData> mvIMUSinceLastKF;
-    IMUPreintegrator GetIMUPreIntSinceLastKF(Frame* pCurF, KeyFrame* pLastKF, const std::vector<IMUData>& vIMUSInceLastKF);
+    IMUData::vector_t mvIMUSinceLastKF;
+    IMUPreintegrator GetIMUPreIntSinceLastKF(Frame* pCurF, KeyFrame* pLastKF, const IMUData::vector_t& vIMUSInceLastKF);
     IMUPreintegrator GetIMUPreIntSinceLastFrame(Frame* pCurF, Frame* pLastF);
 
 

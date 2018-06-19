@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 
         if(bdata)
         {
-            //std::vector<ORB_SLAM2::IMUData> vimuData;
+        //    std::vector<ORB_SLAM2::IMUData> vimuData;
 	    ORB_SLAM2::IMUData::vector_t vimuData;
             //ROS_INFO("image time: %.3f",imageMsg->header.stamp.toSec());
             for(unsigned int i=0;i<vimuMsg.size();i++)
@@ -202,7 +202,7 @@ int main(int argc, char **argv)
             if(bdata)
             {
             //    std::vector<ORB_SLAM2::IMUData> vimuData;
-	         ORB_SLAM2::IMUData::vector_t vimuData;
+	        ORB_SLAM2::IMUData::vector_t vimuData;
                 //ROS_INFO("image time: %.3f",imageMsg->header.stamp.toSec());
                 for(unsigned int i=0;i<vimuMsg.size();i++)
                 {

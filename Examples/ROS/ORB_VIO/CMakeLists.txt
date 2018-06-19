@@ -63,4 +63,12 @@ target_link_libraries(VIO
 ${LIBS}
 )
 
+rosbuild_add_executable(MYNT_VIO
+src/mynt_vio.cc
+src/MsgSync/MsgSynchronizer.cpp
+src/MsgSync/MsgSynchronizer.h
+)
+target_link_libraries(MYNT_VIO
+${LIBS}
+)
 

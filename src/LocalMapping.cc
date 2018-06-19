@@ -25,6 +25,7 @@
 
 #include<mutex>
 #include "Converter.h"
+#include <Eigen/StdVector>
 
 namespace ORB_SLAM2
 {
@@ -42,7 +43,7 @@ public:
     KeyFrameInit* mpPrevKeyFrame;
     cv::Mat Twc;
     IMUPreintegrator mIMUPreInt;
-    std::vector<IMUData> mvIMUData;
+    IMUData::vector_t mvIMUData;
     Vector3d bg;
 
 
@@ -864,8 +865,9 @@ void LocalMapping::AddToLocalWindow(KeyFrame* pKF)
         KeyFrame* pKF0 = mlLocalKeyFrames.front();
         while(mlLocalKeyFrames.size() < mnLocalWindowSize && pKF0->GetPrevKeyFrame()!=NULL)
         {
-            pKF0 = pKF0->GetPrevKeyFrame();
+	   // exchange following two line
             mlLocalKeyFrames.push_front(pKF0);
+            pKF0 = pKF0->GetPrevKeyFrame();
         }
     }
 }
