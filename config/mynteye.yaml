@@ -17,8 +17,8 @@ bagfile: "/home/zhangs/files_bags/30_500.bag"
 
 #######################################
 
-imutopic: "/mynteye/imu"
-imagetopic: "/mynteye/left"
+imutopic: "/mynteye/imu/data_raw"
+imagetopic: "/mynteye/left/image_raw"
 
 
 # Timestamp shift. Timage = Timu + image_delay
@@ -42,28 +42,16 @@ LocalMapping.LocalWindowSize: 20
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-#Camera.fx: 3.6232343319626932e+02 
-#Camera.fy: 3.6325085505539170e+02
-#Camera.cx: 3.9202314757024919e+02
-#Camera.cy: 2.5415988511673606e+02
-#
-#Camera.k1: -1.8888759173124259e-02
-#Camera.k2: -6.1136131637366748e-03
-#Camera.p1: 0.
-#Camera.p2: 0.
-#
-Camera.fx: 4.6701951615472183e+02 
-Camera.fy: 4.6328645451624016e+02
-Camera.cx: 3.8299718661353495e+02
-Camera.cy: 2.4206459336127767e+02
+Camera.fx: 3.5847442850029023e+02 
+Camera.fy: 3.5952665535350462e+02
+Camera.cx: 3.8840661559633401e+02
+Camera.cy: 2.5476941553631312e+02
 
-Camera.k1: -3.9656901530934580e-01
-Camera.k2: 2.2323877914046403e-01
-Camera.p1: 0.
-Camera.p2: 0.
+Camera.k1: -3.0825216120347504e-01
+Camera.k2: 8.4251305214302186e-02
+Camera.p1: -1.5009319710179576e-04
+Camera.p2: 2.0170689406091280e-04
 
-Camera.width: 752
-Camera.height: 480
 
 # Camera frames per second 
 Camera.fps: 30.0
