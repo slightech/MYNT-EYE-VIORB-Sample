@@ -13,16 +13,16 @@
 ## Install MYNT-EYE-VIORB-SDK2
 
 ```
-git clone -b sdk2 https://code.slightech.com:666/nico/MYNT-EYE-VIORB-SDK2.git
-cd MYNT-EYE-VIORB-SDK2
+git clone -b sdk2 https://github.com/slightech/MYNT-EYE-VIORB-Sample.git
+cd MYNT-EYE-VIORB-Sample
 ```
 Add the path including Examples/ROS/ORB_VIO to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned MYNT-EYE-VIORB-SDK2:
 
 `export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/Examples/ROS/ORB_VIO`
 
-Build with build.sh. Modify the path in config/mynteye.yaml
+Build with shell:
 ```
-cd MYNT-EYE-VIORB-SDK2
+cd MYNT-EYE-VIORB-Sample
 ./build.sh
 ```
 ## Get image calibration parameters
@@ -31,7 +31,7 @@ Assume that the left eye of the mynteye camera is used with imu.Through the GetI
 cd MYNT-EYE-SDK-2
 ./samples/_output/bin/tutorials/get_img_params
 ```
-After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-SDK2>/config/mynteye.yaml`.
+After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-Sample>/config/mynteye.yaml`.
 
 ## Run VIORB and mynt_eye_ros_wrapper
 ```
