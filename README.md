@@ -4,7 +4,7 @@
 [MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
 
 ## if you want run VIO with MYNT EYE camera , please follow the steps
-1. Download [MYNT-EYE-D-SDK][] and install .
+1. Download [MYNT-EYE-D-SDK][] and install mynteye_wrapper_d .
 2. Follow the normal procedure to install VIORB.
 3. Update distortion_parameters and projection_parameters in `<VIO>/config/mynteye.yaml`
 4. Run mynteye_wrapper_d and VIORB to start.
@@ -25,10 +25,10 @@ cd MYNT-EYE-VIORB-Sample
 ./build.sh
 ```
 ## Get image calibration parameters
-Assume that the left eye of the mynteye camera is used with imu.Through the GetIntrinsics() and GetExtrinsics() function of the [MYNT-EYE-S-SDK][] API, you can get the image calibration parameters of the currently open device,follow the steps
+Assume that the left eye of the mynteye camera is used with imu. You can get the image calibration parameters of the currently open device,follow the steps
 ```
 cd MYNT-EYE-D-SDK
-./samples/_output/bin/tutorials/get_img_params
+./samples/_output/bin/get_img_params
 ```
 After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-Sample>/config/mynteye.yaml`.
 
