@@ -7,18 +7,18 @@ test.VINSInitTime: 15.0
 
 # Modify test.InitVIOTmpPath and bagfile to the correct path
 # Path to save tmp files/results
-test.InitVIOTmpPath: "/home/myntai/LearnVIORB/temp/mynt/"
+test.InitVIOTmpPath: "/home/zhangs/LearnVIORB/temp/mynt/"
 
 ## For good initialization (no movement at the beginning for some bag)
 test.DiscardTime: 0
 #test.DiscardTime: 18
 
-bagfile: "/home/myntai/files_bags/30_500.bag"
+bagfile: "/home/zhangs/files_bags/30_500.bag"
 
 #######################################
 
-imutopic: "/mynteye/imu/data_raw"
-imagetopic: "/mynteye/left/image_mono"
+imutopic: "/mynteye/imu/image_raw"
+imagetopic: "/mynteye/left/image_raw"
 
 
 # Timestamp shift. Timage = Timu + image_delay
@@ -29,9 +29,9 @@ IMU.multiplyG: 0
 
 # camera-imu frame transformation, Pi = Tic * Pc
 Camera.Tbc:
- [0.99996652, 0.00430873, 0.00695718, -0.04777362,
-  0.00434878 , -0.99997401, -0.00575128, -0.00223731,
-  0.00693222, 0.00578135, -0.99995926, -0.02160071,
+ [-0.0064662, -0.99994994, -0.00763565, 0.00533646,
+  0.99997909, -0.00646566, -0.00009558, -0.04302922,
+  0.0000462, -0.00763611, 0.99997084, 0.02303124,
   0.0, 0.0, 0.0, 1.0]
 
 # Local Window size
@@ -42,22 +42,22 @@ LocalMapping.LocalWindowSize: 20
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 700.187943 
-Camera.fy: 699.855394
-Camera.cx: 641.861436
-Camera.cy: 367.767547
+Camera.fx: 3.5847442850029023e+02 
+Camera.fy: 3.5952665535350462e+02
+Camera.cx: 3.8840661559633401e+02
+Camera.cy: 2.5476941553631312e+02
 
-Camera.k1: -0.325639
-Camera.k2: 0.119911
-Camera.p1: 0.000158
-Camera.p2: 0.000137
+Camera.k1: -3.0825216120347504e-01
+Camera.k2: 8.4251305214302186e-02
+Camera.p1: -1.5009319710179576e-04
+Camera.p2: 2.0170689406091280e-04
 
 
 # Camera frames per second 
-Camera.fps: 20.0
+Camera.fps: 30.0
 
 # IR projector baseline times fx (aprox.)
-Camera.bf: 77.6
+Camera.bf: 40.0
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
