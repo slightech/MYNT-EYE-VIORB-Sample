@@ -1,21 +1,22 @@
 
 # VIORB
 
-[MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
+[MYNT-EYE-SDK-2]: https://github.com/slightech/MYNT-EYE-SDK-2.git
+[MYNT-EYE-VIORB-SDK2]:https://code.slightech.com:666/nico/MYNT-EYE-VIORB-SDK2.git
 
 ## if you want run VIO with MYNT EYE camera , please follow the steps
-1. Download [MYNT-EYE-S-SDK][] and install mynt_eye_ros_wrapper.
+1. Download [MYNT-EYE-SDK-2][] and install mynt_eye_ros_wrapper.
 2. Follow the normal procedure to install VIORB.
 3. Update distortion_parameters and projection_parameters in `<VIO>/config/mynteye.yaml`
 4. Run mynt_eye_ros_wrapper and VIORB to start.
 
-## Install MYNT-EYE-VIORB-Sample
+## Install MYNT-EYE-VIORB-SDK2
 
 ```
-git clone -b mynteye-s https://github.com/slightech/MYNT-EYE-VIORB-Sample.git
+git clone -b sdk2 https://github.com/slightech/MYNT-EYE-VIORB-Sample.git
 cd MYNT-EYE-VIORB-Sample
 ```
-Add the path including Examples/ROS/ORB_VIO to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned MYNT-EYE-VIORB-Sample:
+Add the path including Examples/ROS/ORB_VIO to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned MYNT-EYE-VIORB-SDK2:
 
 `export ROS_PACKAGE_PATH=${ROS_PACKAGE_PATH}:PATH/Examples/ROS/ORB_VIO`
 
@@ -25,9 +26,9 @@ cd MYNT-EYE-VIORB-Sample
 ./build.sh
 ```
 ## Get image calibration parameters
-Assume that the left eye of the mynteye camera is used with imu.Through the GetIntrinsics() and GetExtrinsics() function of the [MYNT-EYE-S-SDK][] API, you can get the image calibration parameters of the currently open device,follow the steps
+Assume that the left eye of the mynteye camera is used with imu.Through the GetIntrinsics() and GetExtrinsics() function of the [MYNT-EYE-SDK-2][] API, you can get the image calibration parameters of the currently open device,follow the steps
 ```
-cd MYNT-EYE-S-SDK
+cd MYNT-EYE-SDK-2
 ./samples/_output/bin/tutorials/get_img_params
 ```
 After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-Sample>/config/mynteye.yaml`.
