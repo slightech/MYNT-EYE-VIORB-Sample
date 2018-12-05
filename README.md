@@ -2,17 +2,18 @@
 # VIORB
 
 [MYNT-EYE-D-SDK]: https://github.com/slightech/MYNT-EYE-D-SDK.git
+[MYNT-EYE-S-SDK]: https://github.com/slightech/MYNT-EYE-S-SDK.git
 
-## if you want run VIO with MYNT EYE camera , please follow the steps
-1. Download [MYNT-EYE-D-SDK][] and install mynteye_wrapper_d .
+## if you want run VIO with MYNT EYE S/D camera , please follow the steps
+1. Download [MYNT-EYE-S-SDK][] / [MYNT-EYE-D-SDK][] and install mynt_eye_ros_wrapper / mynteye_wrapper_d .
 2. Follow the normal procedure to install VIORB.
-3. Update distortion_parameters and projection_parameters in `<VIO>/config/mynteye.yaml`
-4. Run mynteye_wrapper_d and VIORB to start.
+3. Update distortion_parameters and projection_parameters in `<VIO>/config/mynteye_[s/d].yaml`
+4. Run mynt_eye_ros_wrapper(s) / mynteye_wrapper_d(d) and VIORB to start.
 
 ## Install MYNT-EYE-VIORB-Sample
 
 ```
-git clone -b mynteye-d https://github.com/slightech/MYNT-EYE-VIORB-Sample.git
+git clone -b mynteye https://github.com/slightech/MYNT-EYE-VIORB-Sample.git
 cd MYNT-EYE-VIORB-Sample
 ```
 Add the path including Examples/ROS/ORB_VIO to the ROS_PACKAGE_PATH environment variable. Open .bashrc file and add at the end the following line. Replace PATH by the folder where you cloned MYNT-EYE-VIORB-Sample:
@@ -25,17 +26,31 @@ cd MYNT-EYE-VIORB-Sample
 ./build.sh
 ```
 ## Get image calibration parameters
-Assume that the left eye of the mynteye camera is used with imu. You can get the image calibration parameters of the currently open device,follow the steps
+Assume that the left eye of the mynteye camera is used with imu. You can get the image calibration parameters of the currently open device,follow the steps   
+
+When use mynteye-s device
+```
+cd MYNT-EYE-S-SDK
+./samples/_output/bin/tutorials/get_img_params
+```
+
+When use mynteye-d device 
 ```
 cd MYNT-EYE-D-SDK
 ./samples/_output/bin/get_img_params
 ```
-After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-Sample>/config/mynteye.yaml`.
+After running the above type, pinhole's distortion_parameters and projection_parameters is obtained , and then update to `<MYNT-EYE-VIORB-Sample>/config/mynteye_[s/d].yaml`.
 
-## Run VIORB and mynteye_wrapper_d
+## Run VIORB and mynt_eye_ros_wrapper(s) / mynteye_wrapper_d(d)
+When use mynteye-s device
+```
+roslaunch mynt_eye_ros_wrapper mynteye.launch
+roslaunch ORB_VIO testmynteye_s.launch
+```
+When use mynteye-d device
 ```
 roslaunch mynteye_wrapper_d mynteye.launch
-roslaunch ORB_VIO testmynteye.launch
+roslaunch ORB_VIO testmynteye_d.launch
 ```
 Finally, files in pyplotscripts can be used to visualize some results.
 

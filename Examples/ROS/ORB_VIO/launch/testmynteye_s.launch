@@ -1,0 +1,6 @@
+<launch>
+
+ 	<node pkg="ORB_VIO" type="MYNT_VIO" name="MYNT_VIO"  args="$(find ORB_VIO)/../../../Vocabulary/ORBvoc.bin $(find ORB_VIO)/../../../config/mynteye_s.yaml" cwd="node" output="screen">
+	</node>
+
+</launch>
