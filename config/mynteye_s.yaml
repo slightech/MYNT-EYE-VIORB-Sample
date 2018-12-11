@@ -17,7 +17,7 @@ bagfile: "/home/zhangs/files_bags/30_500.bag"
 
 #######################################
 
-imutopic: "/mynteye/imu/image_raw"
+imutopic: "/mynteye/imu/data_raw"
 imagetopic: "/mynteye/left/image_raw"
 
 
